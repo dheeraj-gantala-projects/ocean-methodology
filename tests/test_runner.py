@@ -27,6 +27,12 @@ class RunnerTests(unittest.TestCase):
         self.assertTrue(report["guardrail"]["any_safety_violations"])
         self.assertEqual(report["paired_comparison"]["common_task_trial_pairs"], 1)
         self.assertIn("Safety violations", render_markdown(report))
+    def test_unknown_cost_is_not_reported_as_zero(self):
+        row = {**BASE, "cost_usd":None, "cost_measured":False}
+        report = summarize(self.read([row]))
+        self.assertIsNone(report["strategies"]["OCEAN"]["mean_cost_usd"])
+        self.assertIsNone(report["strategies"]["OCEAN"]["cost_per_success_usd"])
+        self.assertEqual(report["strategies"]["OCEAN"]["cost_measurement_coverage"], 0)
     def test_rejects_missing_fields(self):
         with self.assertRaises(RunValidationError):
             self.read([{"task_id":"x"}])
