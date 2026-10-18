@@ -66,7 +66,7 @@ def summarize(runs: list[dict[str, Any]]) -> dict[str, Any]:
                            for name, ids in sorted(task_sets.items())}
     for name, rows in sorted(groups.items()):
         successes = sum(r["success"] for r in rows)
-        success_costs = [r["cost_usd"] for r in rows if r["success"]]
+        total_cost = sum(r["cost_usd"] for r in rows)
         durations = [r["duration_seconds"] for r in rows]
         result["strategies"][name] = {
             "runs": len(rows),
@@ -74,7 +74,7 @@ def summarize(runs: list[dict[str, Any]]) -> dict[str, Any]:
             "median_duration_seconds": round(statistics.median(durations), 3),
             "mean_duration_seconds": round(statistics.mean(durations), 3),
             "mean_cost_usd": round(statistics.mean(r["cost_usd"] for r in rows), 6),
-            "cost_per_success_usd": round(sum(success_costs) / successes, 6) if successes else None,
+            "cost_per_success_usd": round(total_cost / successes, 6) if successes else None,
             "mean_human_interventions": round(statistics.mean(r["human_interventions"] for r in rows), 3),
             "regressions_per_run": round(sum(r["regressions"] for r in rows) / len(rows), 3),
             "safety_violations": sum(r["safety_violations"] for r in rows),
