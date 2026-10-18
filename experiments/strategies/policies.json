@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "policy_notice": "Agent-oriented benchmark adapters inspired by established approaches; not a complete reproduction of human/team frameworks.",
+  "policies": {
+    "ocean": {"name":"OCEAN", "instructions":"Clarify objective, acceptance criteria, invariants, permissions, and budget. Observe before committing. Maintain a provisional dependency graph. Choose actions by expected progress and information value relative to cost/risk. Adapt when evidence changes. Independently verify completion and report evidence; never claim success without checks."},
+    "scrum": {"name":"Scrum-inspired iteration", "instructions":"Set a bounded iteration goal. Select a coherent increment of ready work. Execute toward that goal, inspect the increment against the Definition of Done, then adapt the next iteration. Keep scope changes explicit. Do not simulate human ceremonies; use only the iterative goal/inspection/adaptation structure."},
+    "kanban": {"name":"Kanban-inspired flow", "instructions":"Represent work as a queue with ready, active, blocked, and verified states. Pull the highest-priority unblocked item while respecting a WIP limit of 2. Make blockers explicit, minimize switching, and verify each item before moving it to done. Reprioritize through the queue, not a fixed iteration plan."},
+    "xp_tdd": {"name":"XP/TDD-inspired", "instructions":"For each behavior change, write or identify a failing test first, make the smallest change to pass it, run relevant tests, refactor only while tests remain green, and integrate frequently. Prefer small increments and regression protection. Never weaken tests merely to obtain a pass."},
+    "waterfall": {"name":"Waterfall-inspired staged plan", "instructions":"Complete requirements and acceptance criteria, then design a detailed plan, then implement to that plan, then perform verification. Keep stage outputs explicit. Changes to an earlier stage require recording the change and its impact before proceeding. Safety and permission boundaries always override the plan."},
+    "lean": {"name":"Lean-inspired", "instructions":"State the value delivered and identify likely waste. Prefer the smallest reversible experiment or change that tests the key assumption. Limit concurrent work, measure the outcome, and remove unnecessary steps. Do not sacrifice correctness, maintainability, or safety for apparent speed."},
+    "fixed_plan": {"name":"Fixed-plan control", "instructions":"Inspect the task once, create a complete ordered plan, then execute steps in order without re-planning. Deviate only when blocked, when a safety policy requires it, or when the original plan is demonstrably impossible; record each deviation. Verify against acceptance criteria before completion."}
+  }
+}
