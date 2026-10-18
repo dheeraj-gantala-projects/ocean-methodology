@@ -71,7 +71,11 @@ OCEAN does not require eliminating humans, deterministic workflows, deadlines, r
 
 Compare an OCEAN-based workflow with an appropriate baseline (for example, a sprint-based workflow or a continuous-flow workflow) on comparable tasks and equivalent permissions and resource budgets. Measure verified success rate, time to verified outcome, human interventions, total cost, duplicated work, retries, regression rate, and safety violations. Run multiple trials and report failures and uncertainty, not just successful demonstrations.
 
-See [Metrics and evaluation](docs/metrics-and-evaluation.md).
+See [Metrics and evaluation](docs/metrics-and-evaluation.md) and [the methodology comparison](docs/methodology-comparison.md).
+
+## Runnable benchmark
+
+The repository now includes a standard-library Python analysis CLI, unit tests, a synthetic smoke fixture, and policies inspired by OCEAN, Scrum, Kanban, XP/TDD, Waterfall, Lean, plus a fixed-plan control. Start at [experiments/README.md](experiments/README.md). The current test suite validates the analysis pipeline; it does not yet execute real coding agents or prove OCEAN is better.
 
 ## Contributing
 
