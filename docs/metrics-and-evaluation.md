@@ -33,3 +33,12 @@ Report failed runs, variance, limitations, and tradeoffs. Do not infer broad sup
 ## Adoption gate
 
 Adopt OCEAN for a task class only when improvements in outcome quality, speed, or total cost justify added complexity without unacceptable safety or reliability regressions.
+
+
+## Runnable benchmark
+
+The repository's experiments directory contains a Python JSONL analysis CLI, validation tests, seven agent-policy definitions, and a protocol. Start with experiments/README.md. The policy set includes OCEAN, Scrum-inspired iteration, Kanban-inspired flow, XP/TDD-inspired engineering, Waterfall-inspired stages, Lean-inspired experimentation, and a fixed-plan control.
+
+The harness has been unit-tested and its report generation has passed a synthetic smoke test. This is a software test of the evaluator, **not** a real-world methodology comparison. A real coding-agent adapter, isolated repository task fixtures, repeated trials, and independently verified acceptance tests remain necessary before making effectiveness claims.
+
+The cost-per-success metric includes the cost of failed runs in its numerator, because unsuccessful attempts consume resources too.
