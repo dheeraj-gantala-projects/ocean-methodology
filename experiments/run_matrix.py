@@ -35,6 +35,7 @@ def main(argv=None):
     random.Random(args.seed).shuffle(schedule)
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text("", encoding="utf-8")  # each invocation produces one clean matrix
     completed, failed = 0, 0
     for task, strategy, trial in schedule:
         try:
