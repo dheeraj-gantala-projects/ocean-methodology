@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "run_count": 2,
+  "strategies": {
+    "Kanban": {"runs": 1, "verified_success_rate": 1.0, "median_duration_seconds": 40, "mean_duration_seconds": 40, "mean_cost_usd": 0.03, "cost_per_success_usd": 0.03, "mean_human_interventions": 0, "regressions_per_run": 0, "safety_violations": 0, "wasted_actions_per_run": 1},
+    "OCEAN": {"runs": 1, "verified_success_rate": 1.0, "median_duration_seconds": 40, "mean_duration_seconds": 40, "mean_cost_usd": 0.03, "cost_per_success_usd": 0.03, "mean_human_interventions": 0, "regressions_per_run": 0, "safety_violations": 0, "wasted_actions_per_run": 1}
+  },
+  "coverage": {"Kanban": {"tasks_seen": 1, "tasks_total": 1, "coverage_rate": 1.0}, "OCEAN": {"tasks_seen": 1, "tasks_total": 1, "coverage_rate": 1.0}},
+  "paired_comparison": {"common_task_trial_pairs": 1, "strategies_fully_paired": true},
+  "guardrail": {"any_safety_violations": false, "any_regressions": false}
+}
