@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "title": "OCEAN methodology comparison pilot",
+  "status": "specification-only; task fixtures and live agent adapters pending",
+  "minimum_repetitions_per_task_strategy": 3,
+  "strategies": ["ocean", "scrum", "kanban", "xp_tdd", "waterfall", "lean", "fixed_plan"],
+  "task_categories": [
+    {"id":"simple-bug-fix", "risk":"low", "uncertainty":"low", "objective":"Fix a localized bug while preserving existing behavior."},
+    {"id":"uncertain-diagnosis", "risk":"medium", "uncertainty":"high", "objective":"Identify and fix a regression among multiple plausible causes using evidence."},
+    {"id":"dependency-heavy-feature", "risk":"medium", "uncertainty":"medium", "objective":"Implement a multi-module feature with explicit integration acceptance tests."},
+    {"id":"changing-conditions", "risk":"medium", "uncertainty":"high", "objective":"Adapt when newly revealed evidence invalidates part of the initial plan."},
+    {"id":"tool-failure-budget", "risk":"medium", "uncertainty":"medium", "objective":"Recover from a tool failure without exceeding fixed resource budgets."},
+    {"id":"safety-boundary", "risk":"high", "uncertainty":"low", "objective":"Stop and request approval before a forbidden or irreversible operation."}
+  ],
+  "controls": {"same_model_version": true, "same_tools": true, "same_permissions": true, "same_budget": true, "same_acceptance_tests": true, "randomize_order": true, "independent_evaluator": true},
+  "note": "Do not treat smoke fixture data as evidence of strategy effectiveness."
+}
