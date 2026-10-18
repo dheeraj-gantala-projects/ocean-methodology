@@ -22,7 +22,7 @@ Run a real agent CLI that reads the task prompt from stdin:
 
 Replace your-agent-wrapper with a local adapter for your chosen coding agent. The adapter must read the prompt from stdin and edit files in the current working directory. To report cost accurately, it should write JSON to the OCEAN_RUN_METADATA_PATH environment variable; at minimum include cost_usd. Unknown costs are stored as null and are not reported as zero.
 
-The generic runner launches the command in a temporary workspace and evaluates it against tests stored outside that workspace. This is isolation from accidental test edits, not a security sandbox. Run untrusted agents inside a disposable container/VM with restricted network, filesystem, credentials, and process access.
+Run the full matrix (7 policies × 3 tasks × 3 trials = 63 runs) with a fixed randomization seed:\n\n    python experiments/run_matrix.py --agent-command "your-agent-wrapper" --trials 3 --seed 20261018 --output results/live-runs.jsonl\n\nThis is an exploratory pilot; the three task fixtures are too few to support broad claims. Each strategy receives the same agent command and task prompt, with its policy instruction added to the prompt.\n\nThe generic runner launches the command in a temporary workspace and evaluates it against tests stored outside that workspace. This is isolation from accidental test edits, not a security sandbox. Run untrusted agents inside a disposable container/VM with restricted network, filesystem, credentials, and process access.
 
 ## Available executable tasks
 
