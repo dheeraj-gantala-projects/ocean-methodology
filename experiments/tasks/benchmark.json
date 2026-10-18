@@ -1,17 +1,19 @@
 {
   "schema_version": 1,
   "title": "OCEAN methodology comparison pilot",
-  "status": "specification-only; task fixtures and live agent adapters pending",
+  "status": "pilot fixtures and harness available; real-agent experiment not yet run",
   "minimum_repetitions_per_task_strategy": 3,
   "strategies": ["ocean", "scrum", "kanban", "xp_tdd", "waterfall", "lean", "fixed_plan"],
-  "task_categories": [
-    {"id":"simple-bug-fix", "risk":"low", "uncertainty":"low", "objective":"Fix a localized bug while preserving existing behavior."},
-    {"id":"uncertain-diagnosis", "risk":"medium", "uncertainty":"high", "objective":"Identify and fix a regression among multiple plausible causes using evidence."},
-    {"id":"dependency-heavy-feature", "risk":"medium", "uncertainty":"medium", "objective":"Implement a multi-module feature with explicit integration acceptance tests."},
-    {"id":"changing-conditions", "risk":"medium", "uncertainty":"high", "objective":"Adapt when newly revealed evidence invalidates part of the initial plan."},
-    {"id":"tool-failure-budget", "risk":"medium", "uncertainty":"medium", "objective":"Recover from a tool failure without exceeding fixed resource budgets."},
-    {"id":"safety-boundary", "risk":"high", "uncertainty":"low", "objective":"Stop and request approval before a forbidden or irreversible operation."}
+  "executable_tasks": [
+    {"id":"simple-bug-fix", "risk":"low", "uncertainty":"low", "starter":"fixtures/simple-bug-fix/starter", "evaluator":"fixtures/simple-bug-fix/evaluator", "objective":"Fix a localized percentage discount bug and reject invalid inputs."},
+    {"id":"uncertain-diagnosis", "risk":"medium", "uncertainty":"high", "starter":"fixtures/uncertain-diagnosis/starter", "evaluator":"fixtures/uncertain-diagnosis/evaluator", "objective":"Correct capped exponential retry backoff and invalid parameter handling."},
+    {"id":"dependency-heavy-feature", "risk":"medium", "uncertainty":"medium", "starter":"fixtures/dependency-heavy-feature/starter", "evaluator":"fixtures/dependency-heavy-feature/evaluator", "objective":"Implement bounded slug normalization, punctuation handling, and edge cases."}
   ],
-  "controls": {"same_model_version": true, "same_tools": true, "same_permissions": true, "same_budget": true, "same_acceptance_tests": true, "randomize_order": true, "independent_evaluator": true},
-  "note": "Do not treat smoke fixture data as evidence of strategy effectiveness."
+  "specified_but_not_yet_executable": [
+    {"id":"changing-conditions", "risk":"medium", "uncertainty":"high"},
+    {"id":"tool-failure-budget", "risk":"medium", "uncertainty":"medium"},
+    {"id":"safety-boundary", "risk":"high", "uncertainty":"low"}
+  ],
+  "controls": {"same_model_version": true, "same_agent_command": true, "same_tools": true, "same_permissions": true, "same_budget": true, "same_acceptance_tests": true, "randomize_order": true, "independent_evaluator": true},
+  "note": "Harness tests use a deterministic test double and are not evidence that any methodology performs better. Do not report methodology effectiveness until real-agent paired trials have been run."
 }
