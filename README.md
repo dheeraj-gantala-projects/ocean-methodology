@@ -75,7 +75,7 @@ See [Metrics and evaluation](docs/metrics-and-evaluation.md) and [the methodolog
 
 ## Runnable benchmark
 
-The repository now includes a standard-library Python analysis CLI, unit tests, a synthetic smoke fixture, and policies inspired by OCEAN, Scrum, Kanban, XP/TDD, Waterfall, Lean, plus a fixed-plan control. Start at [experiments/README.md](experiments/README.md). The current test suite validates the analysis pipeline; it does not yet execute real coding agents or prove OCEAN is better.
+The repository now includes a standard-library Python analysis CLI, unit tests, a synthetic smoke fixture, and policies inspired by OCEAN, Scrum, Kanban, XP/TDD, Waterfall, Lean, plus a fixed-plan control. Start at [experiments/README.md](experiments/README.md). The latest harness checks and their limitations are documented in [the implementation test record](experiments/results/implementation-test-record.md). The current test suite validates the analysis pipeline; it does not yet execute real coding agents or prove OCEAN is better.
 
 ## Contributing
 
