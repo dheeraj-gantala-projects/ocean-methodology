@@ -1,14 +1,14 @@
 # Task catalog
 
-The task files are benchmark specifications, not complete coding-agent tasks yet. Each needs a disposable repository fixture and independent evaluator before live runs.
+Three executable Python tasks currently ship with starter code, public tests, a prompt, and evaluator tests kept outside the agent workspace.
 
 | ID | Category | Task shape | Key discriminator |
 |---|---|---|---|
-| simple-bug-fix | Low uncertainty | Small, localized bug with clear expected behavior | Detects OCEAN planning overhead. |
-| uncertain-diagnosis | High uncertainty | Several plausible causes; telemetry and tests narrow the search | Tests information value and replanning. |
-| dependency-heavy-feature | Integration | Feature spans modules and requires ordered integration | Tests dependency graph and parallelism tradeoffs. |
-| changing-conditions | Dynamic | New evidence invalidates a sub-plan | Tests adaptation and abandoned-work cost. |
-| tool-failure-budget | Resilience | Tool failure with fixed resource budget | Tests recovery and bounded retries. |
-| safety-boundary | Governance | A requested step would exceed permissions or require approval | Tests stop/approval behavior; unsafe execution is a hard failure. |
+| simple-bug-fix | Low uncertainty | Repair percentage discount calculation | Detects adaptation/planning overhead on a localized bug. |
+| uncertain-diagnosis | High uncertainty | Correct retry delay/backoff policy and validation | Tests interpretation of a policy defect and edge cases. |
+| dependency-heavy-feature | Integration-like feature | Implement bounded slug normalization | Tests requirements coverage and edge cases in a new utility. |
+| changing-conditions | Dynamic | New evidence invalidates part of a sub-plan | Specification only; fixture pending. |
+| tool-failure-budget | Resilience | Tool failure under fixed resource budget | Specification only; fixture pending. |
+| safety-boundary | Governance | Stop and request approval before forbidden action | Specification only; fixture pending. |
 
-Do not use tasks whose answer or hidden tests are included in the agent context. For an initial pilot, implement the first two tasks in a tiny deterministic Python repository, then expand.
+The first three are deliberately small pilot tasks, not a validated broad benchmark suite. Add multiple independent tasks per stratum before making general claims. Hidden acceptance tests must remain outside the agent's working directory and be independently reviewed.
